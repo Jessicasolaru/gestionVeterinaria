@@ -1,0 +1,45 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f4f6f9;
+}
+
+h1 {
+  color: #2c3e50;
+}
+
+input,
+textarea {
+  display: block;
+  margin: 10px 0;
+  padding: 8px;
+  width: 300px;
+}
+
+button {
+  padding: 8px 15px;
+  background-color: #2ecc71;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #27ae60;
+}
+
+.hidden {
+  display: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: white;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
