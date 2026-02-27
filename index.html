@@ -3,38 +3,137 @@
   <head>
     <meta charset="UTF-8" />
     <title>Gestión Veterinaria</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- BOOTSTRAP -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- BOOTSTRAP ICONS -->
     <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <!-- ICONS -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/icons/favicon-32x32.png"
+    />
+    <link rel="icon" href="./assets/icons/favicon.ico" />
   </head>
-  <body>
-    <h1>Gestión Veterinaria</h1>
 
-    <!-- LOGIN -->
-    <section id="login-section">
-      <h2>Iniciar Sesión</h2>
-      <input type="text" id="usuario" placeholder="Usuario" />
-      <input type="password" id="contrasena" placeholder="Contraseña" />
-      <button id="btnLogin">Ingresar</button>
-      <p id="mensajeLogin"></p>
-    </section>
+  <body class="bg-light">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-dark navbar-custom shadow-sm">
+      <div class="container">
+        <span class="navbar-brand mb-0 h1">Veterinaria Dr. Pelusa</span>
+        <button
+          id="btnCerrarSesion"
+          class="btn btn-outline-light btn-sm d-none"
+        >
+          Cerrar Sesión
+        </button>
+      </div>
+    </nav>
 
-    <!-- PANEL -->
-    <section id="panel-section" class="hidden">
-      <h2>Panel del Veterinario</h2>
+    <div class="container py-5">
+      <!-- LOGIN -->
+      <section id="login-section" class="row justify-content-center">
+        <div class="col-md-4">
+          <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-body p-4">
+              <h4 class="text-center mb-4 fw-bold">Iniciar Sesión</h4>
 
-      <h3>Registrar Mascota</h3>
-      <input type="text" id="nombreMascota" placeholder="Nombre Mascota" />
-      <input type="text" id="tutorMascota" placeholder="Nombre Tutor" />
-      <textarea id="evolucionMascota" placeholder="Evolución médica"></textarea>
-      <button id="btnAgregar">Agregar Mascota</button>
-      <p id="mensajeMascota"></p>
+              <input
+                type="text"
+                id="usuario"
+                class="form-control mb-3"
+                placeholder="Usuario"
+              />
+              <input
+                type="password"
+                id="contrasena"
+                class="form-control mb-3"
+                placeholder="Contraseña"
+              />
 
-      <h3>Pacientes Registrados</h3>
-      <ul id="listaMascotas"></ul>
+              <button id="btnLogin" class="btn btn-primary w-100">
+                <i class="bi bi-box-arrow-in-right me-2"></i> Iniciar sesión
+              </button>
 
-      <button id="btnCerrarSesion">Cerrar Sesión</button>
-    </section>
+              <p
+                id="mensajeLogin"
+                class="text-danger text-center mt-3 small"
+              ></p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <!-- Scripts -->
-    <script type="module" src="js/app.js"></script>
+      <!-- PANEL -->
+      <section id="panel-section" class="d-none">
+        <!-- FORM CARD -->
+        <div class="card shadow border-0 rounded-4 mb-4">
+          <div class="card-body">
+            <h5 class="fw-bold mb-4">Registrar Mascota</h5>
+
+            <div class="row g-3">
+              <div class="col-md-3">
+                <input
+                  type="text"
+                  id="nombreMascota"
+                  class="form-control"
+                  placeholder="Nombre Mascota"
+                />
+              </div>
+
+              <div class="col-md-3">
+                <input
+                  type="text"
+                  id="razaMascota"
+                  class="form-control"
+                  placeholder="Raza"
+                />
+              </div>
+
+              <div class="col-md-3">
+                <input
+                  type="text"
+                  id="tutorMascota"
+                  class="form-control"
+                  placeholder="Nombre Tutor"
+                />
+              </div>
+
+              <div class="col-md-3">
+                <textarea
+                  id="evolucionMascota"
+                  class="form-control"
+                  placeholder="Evolución médica"
+                ></textarea>
+              </div>
+            </div>
+            <button id="btnAgregar" class="btn btn-success w-100">
+              <i class="bi bi-plus-circle me-2"></i>Agregar Mascota
+            </button>
+
+            <p id="mensajeMascota" class="text-success mt-2 small"></p>
+          </div>
+        </div>
+
+        <!-- LISTA -->
+        <h5 class="fw-bold mb-3 text-dark bg-white p-2 rounded shadow-sm">
+          Pacientes Registrados
+        </h5>
+
+        <div id="listaMascotas" class="row g-4"></div>
+      </section>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

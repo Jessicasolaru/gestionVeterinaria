@@ -8,8 +8,8 @@ export class Veterinario {
     this.mascotas = [];
   }
 
-  agregarMascota(nombre, tutor, evolucionMedica) {
-    const nuevaMascota = new Mascota(nombre, tutor, evolucionMedica);
+  agregarMascota(nombre, tutor, evolucionMedica, raza = "") {
+    const nuevaMascota = new Mascota(nombre, tutor, evolucionMedica, raza);
     this.mascotas.push(nuevaMascota);
   }
 

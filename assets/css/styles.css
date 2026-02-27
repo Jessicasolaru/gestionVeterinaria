@@ -1,45 +1,19 @@
 body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  background-color: #f4f6f9;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 }
 
-h1 {
-  color: #2c3e50;
+/* Animación tarjetas */
+.mascota-card {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-input,
-textarea {
-  display: block;
-  margin: 10px 0;
-  padding: 8px;
-  width: 300px;
+.mascota-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
-
-button {
-  padding: 8px 15px;
-  background-color: #2ecc71;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #27ae60;
-}
-
-.hidden {
-  display: none;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  background: white;
-  padding: 10px;
-  margin: 5px 0;
-  border-radius: 5px;
+/* Navbar */
+.navbar.navbar-custom {
+  background-color: #1f3a3d;
 }
