@@ -1,6 +1,7 @@
 import { Auth } from "./utils/Auth.js";
 
 let veterinarioActual = null;
+let terminoBusqueda = "";
 
 // =====================
 // DOM
@@ -15,6 +16,8 @@ const listaMascotas = document.getElementById("listaMascotas");
 const mensajeMascota = document.getElementById("mensajeMascota");
 
 const btnCerrarSesion = document.getElementById("btnCerrarSesion");
+const bienvenidaSesion = document.getElementById("bienvenidaSesion");
+const buscarMascota = document.getElementById("buscarMascota");
 
 // =====================
 // LOGIN
@@ -32,6 +35,14 @@ btnLogin.addEventListener("click", () => {
 
   if (veterinario) {
     veterinarioActual = veterinario;
+    terminoBusqueda = "";
+    buscarMascota.value = "";
+
+    actualizarLista();
+
+    const saludo =
+      veterinarioActual.nombreUsuario === "sofia" ? "Bienvenida" : "Bienvenido";
+    bienvenidaSesion.textContent = `${saludo} ${veterinarioActual.nombreSesion}`;
 
     loginSection.classList.add("d-none");
     panelSection.classList.remove("d-none");
@@ -41,6 +52,11 @@ btnLogin.addEventListener("click", () => {
   } else {
     mensajeLogin.textContent = "Credenciales incorrectas";
   }
+});
+// Escucha lo que escribe el usuario y actualiza la lista en tiempo real
+buscarMascota.addEventListener("input", (e) => {
+  terminoBusqueda = e.target.value.trim().toLowerCase();
+  actualizarLista();
 });
 
 // =====================
@@ -76,9 +92,17 @@ btnAgregar.addEventListener("click", () => {
 const actualizarLista = () => {
   listaMascotas.innerHTML = "";
 
-  veterinarioActual
+  const mascotasFiltradas = veterinarioActual
     .obtenerMascotas()
-    .forEach(({ nombre, raza, tutor, evolucionMedica }, index) => {
+    .filter(
+      ({ nombre, raza, tutor }) =>
+        nombre.toLowerCase().includes(terminoBusqueda) ||
+        raza.toLowerCase().includes(terminoBusqueda) ||
+        tutor.toLowerCase().includes(terminoBusqueda),
+    );
+
+  mascotasFiltradas.forEach(
+    ({ nombre, raza, tutor, evolucionMedica }, index) => {
       const col = document.createElement("div");
       col.className = "col-md-4";
 
@@ -103,7 +127,8 @@ const actualizarLista = () => {
       `;
 
       listaMascotas.appendChild(col);
-    });
+    },
+  );
 
   activarEventos();
 };
@@ -144,12 +169,15 @@ const activarEventos = () => {
 // =====================
 btnCerrarSesion.addEventListener("click", () => {
   veterinarioActual = null;
+  bienvenidaSesion.textContent = "";
 
   panelSection.classList.add("d-none");
   loginSection.classList.remove("d-none");
   btnCerrarSesion.classList.add("d-none");
 
   listaMascotas.innerHTML = "";
+  terminoBusqueda = "";
+  buscarMascota.value = "";
 });
 
 // =====================

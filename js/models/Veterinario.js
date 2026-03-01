@@ -2,9 +2,10 @@ import { Mascota } from "./Mascota.js";
 
 // Clase Veterinario
 export class Veterinario {
-  constructor(nombreUsuario, contrasena) {
+  constructor(nombreUsuario, contrasena, nombreSesion) {
     this.nombreUsuario = nombreUsuario;
     this.contrasena = contrasena;
+    this.nombreSesion = nombreSesion; // "Dr. Pelusa"
     this.mascotas = [];
   }
 
