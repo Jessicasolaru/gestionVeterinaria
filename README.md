@@ -1,19 +1,25 @@
-# Gestion Veterinaria - Version 2
+# Gestión Veterinaria V2
 
-Proyecto Frontend del Modulo 4 (JavaScript) enfocado en Programacion Orientada a Objetos (POO), autenticacion basica y manipulacion del DOM.
+**Demo en vivo:** https://jessicasolaru.github.io/gestionVeterinaria/
 
-## Descripcion
+Aplicación web frontend para la gestión de pacientes de una veterinaria. Proyecto final del Módulo 4 (JavaScript) del curso de Desarrollo de Aplicaciones FullStack JavaScript, enfocado en Programación Orientada a Objetos (POO), autenticación básica y manipulación del DOM con ES6+.
 
-La aplicacion permite:
+## Funcionalidades
 
-- Iniciar sesion como veterinario (sin backend).
-- Registrar mascotas con nombre, raza, tutor y evolucion medica.
+- Iniciar sesión como veterinario (sin backend).
+- Registrar mascotas con nombre, raza, tutor y evolución médica.
 - Ver en pantalla la lista de pacientes del veterinario autenticado.
 - Editar y eliminar mascotas registradas.
 - Buscar pacientes por nombre, raza o tutor.
-- Cerrar sesion y volver al login.
+- Cerrar sesión y volver al login.
 
-## Tecnologias
+## Capturas
+
+![Pantalla de inicio de sesión](img/login.png)
+
+![Lista de pacientes](img/pacientes.png)
+
+## Tecnologías
 
 - HTML5
 - CSS3
@@ -22,13 +28,30 @@ La aplicacion permite:
 
 ## Credenciales de prueba
 
-- Usuario: `admin` | Contrasena: `1234`
-- Usuario: `sofia` | Contrasena: `abcd`
+| Usuario | Contraseña |
+| ------- | ---------- |
+| `admin` | `1234`     |
+| `sofia` | `abcd`     |
 
-## Link Pages
+Son datos de prueba. La autenticación es simulada y no usa backend.
 
-https://jessicasolaru.github.io/gestionVeterinaria/
+## Ejecución local
+
+1. Clonar el repositorio:
+
+```bash
+git clone https://github.com/Jessicasolaru/gestionVeterinaria
+cd gestionVeterinaria
+```
+
+2. Abrir el archivo `index.html` en el navegador, o usar la extensión **Live Server** de VS Code.
+
+No requiere instalar dependencias.
 
 ## Estado del proyecto
 
-Version academica (V2) para practica de fundamentos de JavaScript orientado a objetos y DOM.
+Versión académica (V2) para practicar fundamentos de JavaScript orientado a objetos y manipulación del DOM.
+
+## Autora
+
+Desarrollado por **Jessica Solar**.
